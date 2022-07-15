@@ -1,7 +1,7 @@
 import os
 import shutil
 import sys
-from other_funk import *
+from others_fanc import *
 import random
 
 def program():
@@ -74,4 +74,4 @@ def program():
             print('Неверный пункт меню')
 
 
-program()
+print(os.getlogin())
