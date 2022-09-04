@@ -59,9 +59,9 @@ while True:
 
     elif decision == '11':
         files = [f for f in os.listdir('/Users/user/PycharmProjects/Modules-and-packages') if
-                 os.path.isfile(os.path.join('/Users/user/PycharmProjects/Modules-and-packages', f))]
+                 os.path.isfile(os.path.join('/Users/user/PycharmProjects/Modules-and-packages', f))] # Применяем генератор
         dir = [f for f in os.listdir('/Users/user/PycharmProjects/Modules-and-packages') if
-               os.path.isdir(os.path.join('/Users/user/PycharmProjects/Modules-and-packages', f))]
+               os.path.isdir(os.path.join('/Users/user/PycharmProjects/Modules-and-packages', f))] # Применяем генератор
         with open('listdir.txt', 'w') as fanc:
             fanc.write('Files: \n')
             json.dump(files, fanc)

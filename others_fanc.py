@@ -58,14 +58,17 @@ def bank():
             deposit += contribution
             print(choice)
         elif choice == '2':
-            price = int(input("введите сумму покупки: "))
-            if price >= deposit:
-                title = str(input("введите название покупки: "))
-                story.fromkeys([price], title)
-                deposit -= price
-                print(choice)
-            else:
-                print("недостаточно средств для совершения покупки")
+            try: # обрабатываем исключения
+                price = int(input("введите сумму покупки: "))
+                if price >= deposit:
+                    title = str(input("введите название покупки: "))
+                    story.fromkeys([price], title)
+                    deposit -= price
+                    print(choice)
+                else:
+                    print("недостаточно средств для совершения покупки")
+            except ValueError:
+                print("Укажите сумму цифрами")
         elif choice == '3':
             print(story.items())
             print(choice)
@@ -79,4 +82,10 @@ def filter_odd_num(in_num):
         return True
     else:
         return False
+
+def filter_odd_num_new(in_num):
+    result = True if (in_num % 2) == 0 else False # применяем тернарный оператор
+    print(result)
+
+filter_odd_num_new(5)
 
